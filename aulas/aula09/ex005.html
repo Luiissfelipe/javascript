@@ -12,7 +12,7 @@
             text-align: center;
         }
 
-        button{
+        div{
             background-color: white;
             color: black;
             font-weight: bold;
@@ -21,7 +21,7 @@
             border: none;
         }
 
-        button:hover{
+        div:hover{
             background-color: rgb(233, 254, 255);
             cursor: pointer;
             transition: 0.2s;
@@ -32,10 +32,13 @@
     <h1>Iniciando estudos com DOM</h1> 
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
-    <button>Clique em mim</button>
+    <div id="botao">Clique em mim</div>
 
     <script>
-
+        var p1 = document.getElementsByTagName('p')[0]
+        var botao = document.querySelector('div#botao')
+        botao.innerText = 'Clique Aqui'
+        botao.style.color = 'red'
     </script>
 </body>
 </html>
