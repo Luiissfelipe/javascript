@@ -3,25 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercício</title>
+    <style>
+        body{
+            font: normal 20px arial;
+        }
+    </style>
 </head>
 <body>
+    <h1>
+        Exercício 1
+    </h1>   
+    <form action="GET">
+        <p>
+            <label for="vend1">Vendedor 1:</label>
+            <input type="text" name="vend1" id="vend1">
+        </p>
+        <p>
+            <label for="totalV1">Total de vendas no mês:</label>
+            <input type="number" name="totalV1" id="totalV1">
+        </p>
+        <p>
+            <label for="vend2">Vendedor 2:</label>
+            <input type="text" name="vend2" id="vend2">
+        </p>
+        <p>
+            <label for="totalV2">Total de vendas no mês:</label>
+            <input type="number" name="totalV2" id="totalV2">
+        </p>
+        <p>
+            <label for="salario">Salário:</label>
+            <input type="number" name="salario" id="salario">
+        </p>
+        <p>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </p>
+        <div id="resultado"></div>
+    </form>
+
     <script>
-        var valorInicial = Number(window.prompt('Valor inicial da conta:'))
-        var rendimento = Number(window.prompt('Rendimento ao mês em %:'))
-        var deposito1 = Number(window.prompt('Deposito 1º mês:'))
-        var retirada1 = Number(window.prompt('Retirada 1º mês: '))
-        var valor = valorInicial + deposito1 - retirada1
-        valor += (valor * rendimento / 100)
-        var deposito2 = Number(window.prompt('Deposito 2º mês:'))
-        var retirada2 = Number(window.prompt('Retirada 2º mês: '))
-        valor += deposito2 - retirada2
-        valor += (valor * rendimento / 100)
-        var deposito3 = Number(window.prompt('Deposito 3º mês:'))
-        var retirada3 = Number(window.prompt('Retirada 3º mês: '))
-        valor += deposito3 - retirada3
-        valor += (valor * rendimento / 100)
-        window.alert(`O saldo do 4º mês será de R$ ${valor.toFixed(2)}`)
+        function verificar(){
+            var vend1Txt = document.getElementById('vend1')
+            var vend1 = vend1Txt.value
+            var vend1Txt = document.getElementById('vend2')
+            var vend2 = vend1Txt.value
+            var totalV1Txt = document.getElementById('totalV1')
+            var totalVendas1 = Number(totalV1Txt.value)
+            var totalV2Txt = document.getElementById('totalV2')
+            var totalVendas2 = Number(totalV2Txt.value)
+            var salarioTxt = document.getElementById('salario')
+            var salario = Number(salarioTxt.value)
+            var result1 = salario + (totalVendas1 * 15 / 100)
+            var result2 = salario + (totalVendas2 * 15 / 100)
+            var resultado = document.getElementById('resultado')
+            resultado.innerHTML = `<p>O salário total do vendedor ${vend1} é R$ ${result1}</p>`
+            resultado.innerHTML += `<p>O salário total do vendedor ${vend2} é R$ ${result2}</p>`
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            font: normal 20px arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Nacionalidade
+    </h1>
+    <label for="nacionalidade">Nacionalidade:</label>
+    <input type="text" name="nacionalidade" id="nacionalidade">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resultado"></div>
+
+    <script>
+        function verificar(){
+            var nacTxt = document.getElementById('nacionalidade')
+            var nacionalidade = nacTxt.value
+            var resultado = document.getElementById('resultado')
+            if(nacionalidade == 'Brasil'){
+                resultado.innerHTML = `<p>Você é brasileiro!</p>`
+            } else{
+                resultado.innerHTML = `<p>Você é estrangeiro!</p>` 
+            }
+        }
+    </script>
+</body>
+</html>
